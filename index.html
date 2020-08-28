@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -o-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    body {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        background-color: darkmagenta;
+    }
+
+    .header > p {
+        font-size: 30px;
+        color: #fff;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    .body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .inputs {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+        width: 100%;
+        margin: 0 auto 20px;
+        margin-bottom: 20px;
+    }
+
+    .inputs > input {
+        width: 300px;
+        border: none;
+    }
+
+    .inputs > input,
+    .inputs > #requestButton {
+        padding: 10px;
+    }
+
+    #requestButton {
+        background-color: rgb(174, 62, 202);
+        padding: 3px;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    #output {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 95vw;
+        height: auto;
+        margin: auto;
+        /* align-items: center; */
+    }
+
+    #output > div {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        background-color: rgb(233, 169, 241);
+        margin-bottom: 10px;
+        border-right: 1px solid darkmagenta;
+    }
+
+    .output__name {
+        color: darkmagenta;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .output__result {
+        font-size: 20px;
+    }
+
+    #output > div > img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .cold {
+        color: #B0FFFF;
+    }
+    .hot {
+        color: #e43333;
+    }
+</style>
+<body>
+    <div class="header">
+        <p>Today's Forcats</p>
+    </div>
+
+    <div class="body">
+        <div class="inputs">
+            <input type="text" id="city">
+            <span id="requestButton">get weather</span>
+        </div>
+    
+        <div id="output">
+    
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
