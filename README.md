@@ -6,7 +6,7 @@ This is a simple weather forecast app that gives us the weather in almost every 
 - CSS3
 - Javascript
 
-## API used : Dark Sky API
+## API used : Weatherbit API => https://www.weatherbit.io/api
 
 ## Contact Me
   ## Email : achraffawzi224a@gmail.com
