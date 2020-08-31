@@ -13,45 +13,39 @@ reqButton.addEventListener('click', () => {
         .then(data => {
             let str = JSON.stringify(data);
             str = JSON.parse(str);
-            temperature = str.data[0].temp;
-            sunRise = str.data[0].sunrise;
-            sunSet = str.data[0].sunset;
-            visualisation = str.data[0].weather.icon,
-            description = str.data[0].weather.description,
-            windSpeed = str.data[0].wind_spd;
+            let temperature = str.data[0].temp;
+            let visualisation = str.data[0].weather.icon;
+            let description = str.data[0].weather.description;
             
             output.innerHTML = `
-                <div>
-                    <span class="output__name">DESCRIPTION</span>
-                    <span class="output__result">${description}</span>
+                <div class="output__top">
+                    <span class="output__city">${city}</span>
+                    <img class="output__image" src="${visualisation}.png" alt"${visualisation}" >
                 </div>
-                <div>
-                    <span class="output__name">TEMPERATURE</span>
-                    <span class="output__result" id="temperatueResult">${temperature}°C</span>
-                </div>
-                <div>
-                    <span class="output__name">SUNRISE</span>
-                    <span class="output__result">${sunRise}</span>
-                </div>
-                <div>
-                    <span class="output__name">SUNSET</span>
-                    <span class="output__result">${sunSet}</span>
-                </div>
-                <div>
-                    <span class="output__name">WIND SPEED</span>
-                    <span class="output__result">${windSpeed.toFixed(2)}m/s</span>
-                </div>
-                <div>
-                    <span class="output__name">VISUALISATION</span>
-                    <img src="${visualisation}.png" alt"${visualisation}" >
+                <div class="output__bottom">
+                    <div class="tempSection">
+                        <span class="output__temp">${temperature}</span>
+                        <span class="tempUnit">°C</span>    
+                    </div>
+                    <span class="output__description">${description}</span>
                 </div>
             `;
 
-            if(temperature <= 20) {
-                document.getElementById('temperatueResult').classList.add('cold');
-            } else if (temperature >= 29)  {
-                document.getElementById('temperatueResult').classList.add('hot');
-            }
+            let tempUnitSpan = document.querySelector('.tempUnit');
+            let tempValue = document.querySelector('.output__temp');
+            let tempSection = document.querySelector('.tempSection');
+
+            tempSection.addEventListener('click', () => {
+
+                if(tempUnitSpan.textContent === "°C") {
+                    tempUnitSpan.textContent = "F";
+                    tempValue.textContent = (temperature * 1.8 + 32).toFixed(2);
+                } else {
+                    tempUnitSpan.textContent = "°C";
+                    tempValue.textContent = ((parseInt(tempValue.textContent) - 32) / 1.8).toFixed(2);
+                }
+
+            });
         })
         .catch(error => {
             let errorName = error.name,
