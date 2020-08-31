@@ -20,7 +20,7 @@ reqButton.addEventListener('click', () => {
             output.innerHTML = `
                 <div class="output__top">
                     <span class="output__city">${city}</span>
-                    <img class="output__image" src="${visualisation}.png" alt"${visualisation}" >
+                    <img class="output__image" src="icons/${visualisation}.png" alt"${description}" >
                 </div>
                 <div class="output__bottom">
                     <div class="tempSection">
