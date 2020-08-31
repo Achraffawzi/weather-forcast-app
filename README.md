@@ -1,10 +1,12 @@
-# weather-forcast-app
+# weather-forecast-app
 This is a simple weather forecast app that gives us the weather in almost every city in the world
 
 ## technologies used
 - HTML5
 - CSS3
 - Javascript
+
+## API used : Dark Sky API
 
 ## Contact Me
   ## Email : achraffawzi224a@gmail.com
